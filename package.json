@@ -14,5 +14,9 @@
     "jquery": "^3.4.1",
     "sweetalert2": "6.6.6",
     "webpack": "3"
+  },
+  "dependencies": {
+    "css-loader": "0.28",
+    "style-loader": "^0.23.1"
   }
 }
