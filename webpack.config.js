@@ -30,6 +30,9 @@ const resolveUrlLoader = {
     }
 };
 
+const useDevServer = true;
+const publicPath = useDevServer ? 'http://localhost:8080/build/' : '/build/';
+
 module.exports = {
     entry: {
         rep_log : './assets/js/rep_log.js',
@@ -39,7 +42,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'web', 'build'),
         filename: "[name].js",
-        publicPath: '/build/'
+        publicPath: publicPath
     },
     module: {
         rules: [
@@ -110,6 +113,7 @@ module.exports = {
     ],
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './web'
+        contentBase: './web',
+        headers: { 'Access-Control-Allow-Origin': '*' },
     }
 };
