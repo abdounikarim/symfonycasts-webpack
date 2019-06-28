@@ -108,5 +108,8 @@ module.exports = {
             minChunks: Infinity
         })
     ],
-    devtool: 'inline-source-map'
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './web'
+    }
 };

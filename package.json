@@ -20,7 +20,8 @@
     "resolve-url-loader": "2",
     "sass-loader": "^7.1.0",
     "sweetalert2": "6.6.6",
-    "webpack": "3"
+    "webpack": "3",
+    "webpack-dev-server": "2"
   },
   "dependencies": {
     "css-loader": "0.28",
