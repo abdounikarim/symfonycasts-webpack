@@ -86,21 +86,22 @@ const webpackConfig = {
 
             {
                 test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
-                use: {
+                use: [
+                    {
                     loader: 'file-loader',
                     options: {
                         name: '[name]-[hash:6].[ext]'
                     }
-                }
+                }]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: {
+                use: [{
                     loader: 'file-loader',
                     options: {
                         name: '[name]-[hash:6].[ext]'
                     }
-                }
+                }]
             }
         ]
     },
@@ -130,7 +131,7 @@ const webpackConfig = {
         }),
         new WebpackChunkHash(),
         isProduction ? new webpack.HashedModuleIdsPlugin() : new webpack.NamedModulesPlugin(),
-        new CleanWebpackPlugin('web/build/**/*.*'),
+        new CleanWebpackPlugin('web/build/**/*.*')
     ],
     devtool: useSourcemaps ? 'inline-source-map' : false,
     devServer: {
